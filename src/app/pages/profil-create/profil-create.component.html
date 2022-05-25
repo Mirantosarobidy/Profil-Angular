@@ -1,0 +1,139 @@
+<div class="container">
+    <div class="row-title">
+        <h4 class="text-nowrap bd-highlight"> Formulaire de saisie d'une inscription</h4>
+        <p>Remplissez le formulaire rigoureusement.</p>
+    </div>
+    <form  (ngSubmit)="onSubmit(inscription)">
+        <div class="row space">
+            <label for="inputNoms">Noms Complet</label>
+            <div class="col-md-6">
+                <input 
+                type="text"
+                class="form-control"
+                id="inputNomsFamille"
+                placeholder="Noms de Famille"
+                formControlName="nomsFamille"
+                required
+                >
+            </div>
+
+            <div class="col-md-6">
+                <input 
+                type="text"
+                class="form-control"
+                id="inputPrenoms"
+                placeholder="Prénom(s)"
+                formControlName="prenoms"
+                required
+                >
+            </div>
+        </div>
+
+        <div class="row space">
+            <div class="col-md-6">
+                <label for="inputNoms">Sexe</label>
+                <select
+                type="text"
+                class="form-select"
+                id="inputSexe"
+                placeholder="Féminin"
+                formControlName="sexe"
+                required
+                > 
+                <option value="feminin" selected>Féminin</option>
+                <option value="masculin">Masculin</option>
+            </select>
+            </div>
+
+            
+            <div class="col-md-6">
+                <label for="inputDate">Date de naissance</label>
+                <input 
+                type="date"
+                class="form-select"
+                id="inputJour"
+                placeholder="jj/mm/aaaa"
+                formControlName="date"
+                required
+                >
+            </div>
+        </div>
+
+        <div class="row space">
+            <div class="col-md-12">
+                <label for="inputAdress">Adresse</label>
+                <input 
+                type="text"
+                class="form-control"
+                id="inputAdress"
+                formControlName="adresse"
+                required
+                >
+            </div>
+        </div>
+
+        <div class="row space">
+            <div class="col-md-6">
+                <label for="inputVille" class="visually-hidden">Ville</label>
+                <input 
+                type="text"
+                class="form-control"
+                id="inputVille"
+                placeholder="Ville"
+                formControlName="ville"
+                aria-describedby="villeHelp"
+                required
+                >
+                <div id="villeHelp" class="form-text">Ville</div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputCode" class="visually-hidden">Code postal</label>
+                <input 
+                type="text"
+                class="form-control"
+                id="inputVille"
+                placeholder="Code postal"
+                formControlName="codePostal"
+                aria-describedby="codeHelp"
+                required
+                >
+                <div id="codeHelp" class="form-text">Code postal</div>
+            </div>
+        </div>
+
+        <div class="row space">
+            <div class="col-md-6">
+                <label for="inputEmail">Email</label>
+                <input 
+                type="email"
+                class="form-control"
+                id="inputEmail"
+                placeholder="Adresse email"
+                formControlName="email"
+                required
+                >
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputNumero">Numéro de téléphone</label>
+                <div class="input-group">
+                    <div class="input-group-text">+261</div>
+                    <input 
+                    type="text"
+                    class="form-control"
+                    id="inputNumero"
+                    placeholder=""
+                    formControlName="numeroTelephone"
+                    required
+                    >
+                  </div>
+            </div>
+        </div>
+
+        <div class="col auto  space">
+            <button class="btn btn-primary mb-3" type="submit" [disabled]="!inscription.valid" (click)="onSubmit(inscription)">Enregistrer</button>
+        </div>
+
+    </form>
+</div>
